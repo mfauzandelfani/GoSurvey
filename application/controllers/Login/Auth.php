@@ -184,7 +184,7 @@ class Auth extends CI_Controller
             <div class="alert alert-success d-flex align-items-center" role="alert" pl-3>
                 <svg class="bi flex-shrink-0 me-2" width="24" height="24"><use xlink:href="#check-circle-fill"/></svg>
            
-            <div pl-3> &nbsp; &nbsp;
+            <div pl-3> &nbsp; 
                 Anda Berhasil Mendaftar, Silahkan lakukan aktivasi akun!
             </div>
             </div>');
@@ -266,7 +266,7 @@ class Auth extends CI_Controller
                     <div class="alert alert-success d-flex align-items-center" role="alert" pl-3>
                         <svg class="bi flex-shrink-0 me-2" width="24" height="24"><use xlink:href="#check-circle-fill"/></svg>
 
-                    <div pl-3> &nbsp; &nbsp;
+                    <div pl-3> &nbsp;
                        Akun ' . $email . ' Telah Aktif !!
                     </div>
                     </div>');
@@ -291,7 +291,7 @@ class Auth extends CI_Controller
 
                     <div class="alert alert-danger d-flex align-items-center" role="alert">
                     <svg class="bi flex-shrink-0 me-2" width="24" height="24"><use xlink:href="#exclamation-triangle-fill"/></svg>
-                    <div> &nbsp; &nbsp;
+                    <div> &nbsp; 
                     Aktivasi Anda Gagal, Token Kadeluarsa !!
                     </div>
                     </div>');
@@ -312,7 +312,7 @@ class Auth extends CI_Controller
 
                  <div class="alert alert-danger d-flex align-items-center" role="alert">
                  <svg class="bi flex-shrink-0 me-2" width="24" height="24"><use xlink:href="#exclamation-triangle-fill"/></svg>
-                 <div> &nbsp; &nbsp;
+                 <div> &nbsp; 
                  Aktivasi Anda Gagal, Karena Salah Token !!
                  </div>
                 </div>');
@@ -334,7 +334,7 @@ class Auth extends CI_Controller
 
              <div class="alert alert-danger d-flex align-items-center" role="alert">
              <svg class="bi flex-shrink-0 me-2" width="24" height="24"><use xlink:href="#exclamation-triangle-fill"/></svg>
-             <div> &nbsp; &nbsp;
+             <div> &nbsp; 
                Aktivasi Anda Gagal, Karena Salah Email !!
              </div>
             </div>');
@@ -410,7 +410,7 @@ class Auth extends CI_Controller
                 <div class="alert alert-success d-flex align-items-center" role="alert" pl-3>
                     <svg class="bi flex-shrink-0 me-2" width="24" height="24"><use xlink:href="#check-circle-fill"/></svg>
             
-                <div pl-3> &nbsp; &nbsp;
+                <div pl-3> &nbsp; 
                     Silahkan Cek Email Untuk Mereset Password !!
                 </div>
                 </div>');
@@ -431,7 +431,7 @@ class Auth extends CI_Controller
 
                 <div class="alert alert-danger d-flex align-items-center" role="alert">
                 <svg class="bi flex-shrink-0 me-2" width="24" height="24"><use xlink:href="#exclamation-triangle-fill"/></svg>
-                <div> &nbsp; &nbsp;
+                <div> &nbsp; 
                 Email Anda Tidak Terdaftar, Atau Belum Aktif!!
                 </div>
                 </div>');
@@ -468,7 +468,7 @@ class Auth extends CI_Controller
 
                 <div class="alert alert-danger d-flex align-items-center" role="alert">
                 <svg class="bi flex-shrink-0 me-2" width="24" height="24"><use xlink:href="#exclamation-triangle-fill"/></svg>
-                <div> &nbsp; &nbsp;
+                <div> &nbsp; 
                 Reset Password Gagal, Salah Token!!
                 </div>
                 </div>');
@@ -489,7 +489,7 @@ class Auth extends CI_Controller
 
                 <div class="alert alert-danger d-flex align-items-center" role="alert">
                 <svg class="bi flex-shrink-0 me-2" width="24" height="24"><use xlink:href="#exclamation-triangle-fill"/></svg>
-                <div> &nbsp; &nbsp;
+                <div> &nbsp;
                 Reset Password Gagal, Salah Email!!
                 </div>
                 </div>');
@@ -546,7 +546,7 @@ class Auth extends CI_Controller
                 <div class="alert alert-success d-flex align-items-center" role="alert" pl-3>
                     <svg class="bi flex-shrink-0 me-2" width="24" height="24"><use xlink:href="#check-circle-fill"/></svg>
             
-                <div pl-3> &nbsp; &nbsp;
+                <div pl-3> &nbsp; 
                     Password Berhasil Diganti, Silahkan Login!
                 </div>
                 </div>');
