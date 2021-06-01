@@ -101,7 +101,7 @@
           <h2 data-aos="fade-up" data-aos-delay="400"> Website Survey Nomor 1 Di Indonesia </h2>
           <div data-aos="fade-up" data-aos-delay="600">
             <div class="text-center text-lg-start">
-              <a class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center" href="<?= base_url('login/register/registration'); ?>">
+              <a class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center" href="<?= base_url('login/auth/registration'); ?>">
                 <span>Daftar</span>
                 <i class="bi bi-arrow-right"></i>
               </a>
