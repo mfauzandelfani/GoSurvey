@@ -38,7 +38,7 @@ class Member_ctrl extends CI_Controller
 
                         <div class="alert alert-warning d-flex align-items-center" role="alert">
                         <svg class="bi flex-shrink-0 me-2" width="24" height="24"><use xlink:href="#exclamation-triangle-fill"/></svg>
-                        <div> &nbsp; &nbsp; Data Diri Anda Belum Di Isi !!
+                        <div> &nbsp; &nbsp; Data Diri Anda Belum Di Isi, Untuk Mengisi Silahkan <a href=' . base_url('Member/Daerah_ctrl') . '> Klik Disini </a> !!
                         </div>
                         </div>');
 		}

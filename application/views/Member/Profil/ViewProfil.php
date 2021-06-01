@@ -25,8 +25,8 @@
                         <p class="card-text"><small class="text-muted">Member Since <?= date('d F Y', $user['date_created']); ?></small></p>
                     </div>
                     <div class="form-group">
-                        <a class="btn btn-info mt-3" href="<?= site_url('/Member/Daerah_ctrl'); ?>">Edit Profil</a>
-                        <!-- <button type="submit" class="btn btn-info">Edit Profil</button> -->
+                        <!-- <a class="btn btn-info mt-3" href="<?= site_url('/Member/Daerah_ctrl'); ?>">Edit Profil</a>
+                        <button type="submit" class="btn btn-info">Edit Profil</button> -->
                     </div>
                 </div>
             </div>
