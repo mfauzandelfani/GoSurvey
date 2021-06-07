@@ -10,7 +10,7 @@
           <center><br />
             <input type="hidden" name="idtask" id="idtask" class="form-control" value="<?= $id_task; ?> ">
 
-            <button type=" submit" class="btn btn-outline-primary btn-icon-text">
+            <button type="submit" class="btn btn-outline-primary btn-icon-text">
               <i class="mdi mdi-file-check btn-icon-prepend"></i> Buat Soal </button>
           </center>
         </form>

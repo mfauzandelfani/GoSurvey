@@ -32,7 +32,7 @@ class SurveyMember_model extends CI_Model
 
     public function survey_activ($id_user)
     {
-        return $this->db->query('select b.judul_task, b.desk_task, b.nominal_task, a.nama_usr from tbl_user a, tbl_task b where a.id_usr = b.id_usr and a.id_usr !="' . $id_user . '" 
+        return $this->db->query('select b.id_task, b.judul_task, b.desk_task, b.nominal_task, a.nama_usr from tbl_user a, tbl_task b where a.id_usr = b.id_usr and a.id_usr !="' . $id_user . '" 
         ')->result();
     }
 
@@ -55,10 +55,24 @@ class SurveyMember_model extends CI_Model
         return  $insert_id;
     }
 
-
-
     public function buat_soal_option($data)
     {
         $this->db->insert('tbl_option_soal', $data);
+    }
+
+
+    public function soal_option($id_task)
+    {
+        return $this->db->query('select * from tbl_option_soal where id_task = "' . $id_task . '"')->result();
+    }
+
+    public function tampil_soal($id_task)
+    {
+        return $this->db->query('select * from tbl_soal where id_task = "' . $id_task . '"')->result();
+    }
+
+    public function jawab_soal($data)
+    {
+        $this->db->insert('tbl_jawaban', $data);
     }
 }

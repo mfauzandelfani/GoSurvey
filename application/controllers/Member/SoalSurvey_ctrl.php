@@ -72,4 +72,51 @@ class SoalSurvey_ctrl extends CI_Controller
         }
         redirect('/Member/TaskSurvey_ctrl/waiting_survey');
     }
+
+    public function tampil_soal($id)
+    {
+        $dataa['user'] = $this->db->get_where('tbl_user', ['email_usr' =>
+        $this->session->userdata('email')])->row_array();
+
+        $data['id_task'] = $id;
+
+        $soal = $this->SurveyMember_model->tampil_soal($id);
+        $soal_opt = $this->SurveyMember_model->soal_option($id);
+        $data = array(
+            'soal' => $soal,
+            'soal_opt' => $soal_opt,
+        );
+
+        // var_dump($data);
+        // die;
+
+
+        $this->load->view('Member/UI/Header', $dataa);
+        $this->load->view('Member/Survey/View_SoalSurvey', $data);
+        $this->load->view('Member/UI/Footer');
+    }
+
+    public function jawabsoal()
+    {
+        $id_taskk = $this->input->post('idtask');
+        $id_user = $this->input->post('iduser');
+
+        foreach ($_POST['jawaban'] as $a => $jwbn) {
+            // $jwb = $_POST['jawaban-' . $a];
+            $jawab[] = array($jwbn);
+            // foreach ($jwb as $item) {
+            $data_input = array(
+                'id_usr' => $id_user,
+                'id_task' => $id_taskk,
+                'jawaban' => $jawab
+            );
+
+            var_dump($data_input);
+            die;
+
+            $this->SurveyMember_model->jawab_soal($data_input);
+            // }
+        }
+        redirect('/Member/Member_ctrl');
+    }
 }

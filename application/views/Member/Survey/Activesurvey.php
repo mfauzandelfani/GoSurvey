@@ -20,7 +20,9 @@
               <h5 class="font-weight-normal mb-3"><?php echo $value->desk_task ?></h5>
               <h4 class="mb-5">Rp. <?= number_format($value->nominal_task, 2, ',', '.') ?></h4>
               <p>Author <?php echo $value->nama_usr ?></p>
-              <button type="button" class="btn btn-info btn-rounded btn-fw">Isi Survey</button>
+
+              <a href="<?= base_url('Member/SoalSurvey_ctrl/tampil_soal/' . $value->id_task) ?>" type="button" class="btn btn-info btn-rounded btn-fw">Isi Survey</a>
+              <!-- <button type="button" class="btn btn-info btn-rounded btn-fw">Isi Survey</button> -->
             </div>
           </div>
         </div>

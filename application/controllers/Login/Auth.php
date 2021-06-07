@@ -210,7 +210,7 @@ class Auth extends CI_Controller
 
         $this->email->initialize($config);  //Penyebab eror
 
-        $this->email->from('lombavikre@gmail.com', 'Lomba Vikre');
+        $this->email->from('gosurveypcr@gmail.com', 'GoSurvey');
         $this->email->to($this->input->post('email'));
 
         if ($type == 'verify') {
