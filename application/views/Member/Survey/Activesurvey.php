@@ -21,22 +21,8 @@
               <h4 class="mb-5">Rp. <?= number_format($value->nominal_task, 2, ',', '.') ?></h4>
               <p>Author <?php echo $value->nama_usr ?></p>
 
-              <?php foreach ($jwb as $key => $uy) {
-                $kd = $uy->id_task;
-              } ?>
+              <a href="<?= base_url('Member/SoalSurvey_ctrl/tampil_soal/' . $value->id_task) ?>" type="button" class="btn btn-info btn-rounded btn-fw">Isi Survey</a>
 
-              <?php
-              if ($value->id_task != $kd) { ?>
-                <a href="<?= base_url('Member/SoalSurvey_ctrl/tampil_soal/' . $value->id_task) ?>" type="button" class="btn btn-info btn-rounded btn-fw">Isi Survey</a>
-              <?php
-              } elseif ($value->id_task == $kd) {  ?>
-                <button type="button" class="btn btn-danger btn-rounded btn-fw">Survey Telah Diisi</button>
-
-
-
-              <?php
-              }
-              ?>
             </div>
           </div>
         </div>
