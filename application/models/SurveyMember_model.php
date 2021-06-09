@@ -32,7 +32,7 @@ class SurveyMember_model extends CI_Model
 
     public function survey_activ($id_user)
     {
-        return $this->db->query('select b.id_task, b.judul_task, b.desk_task, b.nominal_task, a.nama_usr from tbl_user a, tbl_task b where a.id_usr = b.id_usr and a.id_usr !="' . $id_user . '" 
+        return $this->db->query('select b.id_task, b.judul_task, b.desk_task, b.nominal_task, a.id_usr, a.nama_usr from tbl_user a, tbl_task b where a.id_usr = b.id_usr and a.id_usr !="' . $id_user . '" 
         ')->result();
     }
 
@@ -45,6 +45,11 @@ class SurveyMember_model extends CI_Model
     public function jml_task($id_user)
     {
         return $this->db->query('select count(a.id_task) as id_task from tbl_task a, tbl_user b where a.id_usr = b.id_usr and a.id_usr != "' . $id_user . '"')->row_array();
+    }
+
+    public function jml_done($id_user)
+    {
+        return $this->db->query('select count(a.id_jwb) as id_jwb from tbl_jawaban a, tbl_user b where a.id_usr = b.id_usr and a.id_usr = "' . $id_user . '"')->row_array();
     }
 
     public function buat_soal($data)
@@ -60,6 +65,10 @@ class SurveyMember_model extends CI_Model
         $this->db->insert('tbl_option_soal', $data);
     }
 
+    public function tampil_jawaban()
+    {
+        return $this->db->query('select * from tbl_jawaban')->result();
+    }
 
     public function soal_option($id_task)
     {

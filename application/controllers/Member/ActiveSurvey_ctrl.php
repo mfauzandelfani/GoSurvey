@@ -17,7 +17,11 @@ class ActiveSurvey_ctrl extends CI_Controller
         $this->session->userdata('email')])->row_array();
 
         $srvy = $this->SurveyMember_model->survey_activ($dataa['user']['id_usr']);
-        $data = array('srvy' => $srvy,);
+        $jwb = $this->SurveyMember_model->tampil_jawaban();
+        $data = array(
+            'srvy' => $srvy,
+            'jwb' => $jwb,
+        );
         // var_dump($data['srvy']);
         // die;
 

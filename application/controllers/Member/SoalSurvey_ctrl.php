@@ -65,7 +65,8 @@ class SoalSurvey_ctrl extends CI_Controller
                         'id_soal' => $idsoal,
                         'pilihan_opt' => $item
                     );
-
+                    // var_dump($_POST);
+                    // die;
                     $this->SurveyMember_model->buat_soal_option($data_input1);
                 }
             }
@@ -92,7 +93,7 @@ class SoalSurvey_ctrl extends CI_Controller
 
 
         $this->load->view('Member/UI/Header', $dataa);
-        $this->load->view('Member/Survey/View_SoalSurvey', $data);
+        $this->load->view('Member/Survey/Tampil_soal', $data);
         $this->load->view('Member/UI/Footer');
     }
 
@@ -101,22 +102,15 @@ class SoalSurvey_ctrl extends CI_Controller
         $id_taskk = $this->input->post('idtask');
         $id_user = $this->input->post('iduser');
 
-        foreach ($_POST['jawaban'] as $a => $jwbn) {
-            // $jwb = $_POST['jawaban-' . $a];
-            $jawab[] = array($jwbn);
-            // foreach ($jwb as $item) {
-            $data_input = array(
-                'id_usr' => $id_user,
-                'id_task' => $id_taskk,
-                'jawaban' => $jawab
-            );
+        $x = $_POST['jawaban'];
+        $j = join(", ", $x);
+        // foreach ($x as $m) {
+        //     $y = "$j";
+        // }
 
-            var_dump($data_input);
-            die;
+        $sql = "INSERT INTO `tbl_jawaban` (`id_usr`, `id_task`, `jawaban`) VALUES ($id_user, $id_taskk, '[" . $j . "]');";
+        $this->db->query($sql);
 
-            $this->SurveyMember_model->jawab_soal($data_input);
-            // }
-        }
-        redirect('/Member/Member_ctrl');
+        redirect('/Member/ActiveSurvey_ctrl');
     }
 }
