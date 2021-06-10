@@ -84,5 +84,28 @@
     $("#Ats_nama").attr("value", pemilik);
   })
 </script>
+<script>
+  $(function() {
+    $('#modal').modal('toggle');
+  });
+  $(".edit3").on("click", function() {
+    const id = $(this).data('id');
+    const status = $(this).data('status');
+    // const nama = $(this).data('nama');
+    // const nomor = $(this).data('nomor');
+    // const pemilik = $(this).data('pemilik');
+
+    $("#id_task").attr("value", id);
+    $("#status").attr("value", status);
+    // $("#nama_bank").attr("value", nama);
+    // $("#nomor_bank").attr("value", nomor);
+    // $("#Ats_nama").attr("value", pemilik);
+  })
+
+  // $(".form-control form-control-lg").on("change", function() {
+  //   var fileName = $(this).val().split("\\").pop();
+  //   $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+  // });
+</script>
 
 </html>

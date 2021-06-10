@@ -30,6 +30,10 @@ class Pgn_model extends CI_Model
 		$this->db->where('no_bank', $id);
 		return $this->db->get('tbl_bank')->row();
 	}
+	public function select_srvy()
+	{
+		return $this->db->get('tbl_task')->result();
+	}
 
 	//update
 	public function update_user($id, $data)
@@ -73,6 +77,12 @@ class Pgn_model extends CI_Model
 	{
 
 		$this->db->update('tbl_bank', $data, array('no_bank' => $id));
+		return ($this->db->affected_rows() > 0) ? TRUE : FALSE;
+	}
+	public function ubahdataverifikasi($data, $id)
+	{
+
+		$this->db->update('tbl_task', $data, array('id_task' => $id));
 		return ($this->db->affected_rows() > 0) ? TRUE : FALSE;
 	}
 }

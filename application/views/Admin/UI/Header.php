@@ -126,7 +126,7 @@
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="<?= site_url('/Admin/Ondeh_ctrl'); ?>">
+            <a class="nav-link" href="<?= site_url('/Admin/verifikasi_ctrl'); ?>">
               <span class="menu-title">Verifikasi</span>
               <i class="mdi mdi-clipboard-check menu-icon"></i>
             </a>
