@@ -75,4 +75,17 @@ class Pgn_model extends CI_Model
 		$this->db->update('tbl_bank', $data, array('no_bank' => $id));
 		return ($this->db->affected_rows() > 0) ? TRUE : FALSE;
 	}
+
+	public function registrasi($data)
+	{
+		$this->db->insert('tbl_user', $data);
+		$insert_id = $this->db->insert_id();
+
+		return  $insert_id;
+	}
+
+	public function insert_saldo($data)
+	{
+		$this->db->insert('tbl_saldo', $data);
+	}
 }

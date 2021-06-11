@@ -21,7 +21,8 @@
               <h5 class="font-weight-normal mb-3"><?php echo $value->desk_task ?></h5>
               <h4 class="mb-5">Rp. <?= number_format($value->nominal_task, 2, ',', '.') ?></h4>
               <p>Author <?php echo $value->nama_usr ?></p>
-              <button type="button" class="btn btn-success btn-rounded btn-fw">Lihat Grafik</button>
+              <a class="btn btn-success btn-rounded btn-fw" href="<?= site_url('/Member/Grafik_ctrl'); ?>">Lihat Grafik</a>
+              <!-- <button type="button" class="btn btn-success btn-rounded btn-fw">Lihat Grafik</button> -->
             </div>
           </div>
         </div>

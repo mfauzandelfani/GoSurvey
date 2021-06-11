@@ -8,7 +8,6 @@
         <br />
 
         <form id="form" action="<?= base_url('Member/SoalSurvey_ctrl/jawabsoal'); ?>" method="POST">
-            <input type="hidden" name="iduserr[]" id="idusr" class="form-control" value="<?= $user['id_usr']; ?> ">
             <input type="hidden" name="iduser" id="idusr" class="form-control" value="<?= $user['id_usr']; ?> ">
 
             <?php
@@ -21,7 +20,7 @@
                             <div class="card p-1 mt-1">
                                 <div class="row">
                                     <div class="col-sm-8 mt-1" id="soal_">
-                                        <input class="form-control mb-1" value="<?= $value->soal ?>" type="text">
+                                        <input class="form-control mb-1" value="<?= $value->soal ?>" name="soal[]" type="text">
                                     </div>
                                 </div>
                             </div>

@@ -210,7 +210,7 @@
       <!-- endinject -->
       <!-- Custom js for this page -->
       <script src="<?php echo base_url(); ?>assets/surveyer/assets/js/dashboard.js"></script>
-      <script src="<?php echo base_url(); ?>assets/surveyerassets/js/todolist.js"></script>
+      <script src="<?php echo base_url(); ?>assets/surveyer/assets/js/todolist.js"></script>
       <!-- End custom js for this page -->
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
