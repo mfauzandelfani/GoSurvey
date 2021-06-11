@@ -48,10 +48,11 @@ $query = "select * from tbl_saldo";
                                 }
                                 ?>
                             </select>
+
                         </div>
                         <div class="form-group">
                             <label>Nomor Rekening Anda</label>
-                            <input type="text" id="rek" class="form-control form-control-sm" placeholder="No Rekening">
+                            <input type="text" id="rek" name="rek" class="form-control form-control-sm" placeholder="No Rekening">
                         </div>
 
 

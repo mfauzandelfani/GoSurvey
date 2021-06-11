@@ -49,7 +49,7 @@ class Dompet_model extends CI_Model
     public function lihat_riwayat($id_user)
     {
         return $this->db->query('select a.transaksi, a.nominal_trans, a.wkt_trans from tbl_riwayat a, tbl_user b where a.id_usr = b.id_usr and a.id_usr ="' . $id_user . '"
-         ')->result();
+         order by id desc')->result();
     }
 
     // public function lihat_riwayat()

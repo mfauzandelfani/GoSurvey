@@ -25,8 +25,10 @@
                 <th> Judul Survey </th>
                 <th> Deskripsi</th>
                 <th> Jumlah Respon </th>
+                <th> Pembayaran </th>
                 <th> Nominal </th>
                 <th> Bukti </th>
+                <th> Status </th>
                 <th> Action </th>
               </tr>
             </thead>
@@ -38,13 +40,32 @@
                   <td><?php echo $value->judul_task ?></td>
                   <td><?php echo $value->desk_task ?></td>
                   <td><?php echo $value->jmlrespon_task ?></td>
+                  <td> <?php echo $value->pembayaran ?> </td>
                   <td><?php echo $value->nominal_task ?></td>
                   <td><?php echo $value->img ?></td>
-                  <td>
-                    <a href="<?= base_url('Member/SoalSurvey_ctrl/index/' . $value->id_task) ?>"><label class="badge badge-info active">Buat Soal</label></a>
+                  <?php
 
-                    <!-- <a href="#"><label class="badge badge-danger">Hapus</label></a> -->
-                  </td>
+                  if ($value->status == "verified") {
+                  ?>
+                    <th style="color: seagreen;"> <?php echo $value->status ?> </th>
+                    <td>
+                      <a href="<?= base_url('Member/SoalSurvey_ctrl/index/' . $value->id_task) ?>" disabled=><label class="badge badge-info active" aria-disabled="true">Buat Soal</label></a>
+
+                      <!-- <a href="#"><label class="badge badge-danger">Hapus</label></a> -->
+                    </td>
+                  <?php
+                  } elseif ($value->status == "unverified") {
+
+                  ?>
+                    <th style="color: red;"> <?php echo $value->status ?> </th>
+                    <td>
+                      -
+                    </td>
+                  <?php
+                  }
+                  ?>
+
+
 
                 </tr>
               <?php } ?>

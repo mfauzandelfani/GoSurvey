@@ -18,6 +18,7 @@ class TaskSurvey_ctrl extends CI_Controller
         $data = array('saldo' => $saldo,);
         $data['user'] = $this->db->get_where('tbl_user', ['email_usr' =>
         $this->session->userdata('email')])->row_array();
+        $data['task'] = $this->db->get('tbl_task')->row_array();
 
         $this->load->view('Member/UI/Header', $data);
         $this->load->view('Member/Survey/TaskSurvey', $data);
@@ -35,6 +36,7 @@ class TaskSurvey_ctrl extends CI_Controller
         $res = $this->input->post("jml_res");
         $nom  = $this->input->post("nominal");
         $img = $this->input->post("bukti");
+        $pbyr = $this->input->post("pembayaran");
 
         $data_input = array(
             'id_usr' => $idusr,
@@ -42,7 +44,9 @@ class TaskSurvey_ctrl extends CI_Controller
             'desk_task' => $desk,
             'jmlrespon_task' => $res,
             'nominal_task' => $nom,
-            'img' => $img
+            'img' => $img,
+            'pembayaran' => $pbyr,
+            'status' => "unverified"
         );
 
         // var_dump($data_input);
@@ -63,7 +67,11 @@ class TaskSurvey_ctrl extends CI_Controller
         $srvy = $this->SurveyMember_model->select_task($dataa['user']['id_usr']);
         $data = array('srvy' => $srvy,);
 
+
+
         $this->load->view('Member/UI/Header', $dataa);
+
+
         $this->load->view('Member/Survey/Wait_survey', $data);
         $this->load->view('Member/UI/Footer');
     }

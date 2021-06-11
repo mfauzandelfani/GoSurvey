@@ -46,7 +46,7 @@
           <div class="card-body">
             <h4 class="font-weight-normal mb-3">Survey Tuntas<i class="mdi mdi-diamond mdi-24px float-right"></i>
             </h4>
-            <h2 class="mb-5"><?= $jawab['id_jwb']; ?></h2>
+            <h2 class="mb-5">0</h2>
           </div>
         </div>
       </div>

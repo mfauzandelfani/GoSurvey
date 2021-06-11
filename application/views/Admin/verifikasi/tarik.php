@@ -6,7 +6,7 @@
         <h3 class="page-title">
             <span class="page-title-icon bg-gradient-info text-white mr-2">
                 <i class="mdi mdi-database"></i>
-            </span> Admin / Verifikasi
+            </span> Admin / Tarik
         </h3>
         <br />
 
@@ -24,15 +24,18 @@
                     <table class="table table-bordered">
                         <thead>
                             <tr class="table-active">
-                                <th> No </th>
-                                <th> Judul</th>
-                                <th> Deskripsi</th>
-                                <th> Jumlah Respon</th>
+                                <th> Id </th>
+                                <th> Nama</th>
+                                <th> Tanggal Topup</th>
                                 <th> Nominal</th>
-                                <th> Bukti</th>
+                                <th> Transaksi</th>
                                 <th> Pembayaran</th>
+                                <th> No Rekening</th>
                                 <th> Status</th>
                                 <th> Aksi</th>
+                                <!-- <th> Pembayaran</th>
+                                <th> Status</th>
+                                <th> Aksi</th> -->
                             </tr>
                         </thead>
 
@@ -43,14 +46,13 @@
 
                             <tbody>
                                 <tr>
-                                    <td><?php echo $value->id_task ?></td>
-                                    <td><?php echo $value->judul_task ?></td>
-                                    <td><?php echo $value->desk_task ?></td>
-                                    <td><?php echo $value->jmlrespon_task ?></td>
-                                    <td><?php echo $value->nominal_task ?></td>
-                                    <td><?php echo $value->img ?></td>
-                                    <td> <?php echo $value->pembayaran ?> </td>
-
+                                    <td><?php echo $key + 1 ?></td>
+                                    <td><?php echo $value->nama_usr ?></td>
+                                    <td><?php echo date('d F Y', $value->tgl_tarik) ?></td>
+                                    <td><?php echo $value->jml_tarik ?></td>
+                                    <td><?php echo $value->transaksi ?></td>
+                                    <td><?php echo $value->pembayaran ?></td>
+                                    <td><?php echo $value->no_rek ?></td>
                                     <?php
 
                                     if ($value->status == "verified") {
@@ -66,12 +68,17 @@
                                     ?>
 
                                     <th>
-                                        <a href="#" data-target="#exampleModal" class="edit3" data-toggle="modal" data-id="<?php echo $value->id_task; ?>" data-status="<?php echo $value->status; ?> "><label class=" badge badge-info">Edit</label></a>
+                                        <a href="#" data-target="#exampleModal" class="edit5" data-toggle="modal" data-id="<?php echo $value->id; ?> " data-status="<?php echo $value->status; ?> "><label class=" badge badge-info">Edit</label></a>
                                     </th>
                                     <!-- Modal -->
 
                                 </tr>
                             <?php } ?>
+                            </tbody>
+
+
+
+
                             </tbody>
                     </table>
                 </div>
@@ -83,18 +90,18 @@
     <div>
     <button id=" btn_hapus"> Coba </button>
                 </div> -->
-        <form method="POST" action="<?= base_url('Admin/verifikasi_ctrl/editaction'); ?>" enctype="multipart/form-data">
+        <form method="POST" action="<?= base_url('Admin/tarik_ctrl/editaction'); ?>" enctype="multipart/form-data">
             <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Edit Verifikasi</h5>
+                            <h5 class="modal-title" id="exampleModalLabel">Edit Topup</h5>
 
                         </div>
 
                         <div class="modal-body">
                             <div class="form-group">
-                                <input type="hidden" class="form-control form-control-lg" id="id_task" name="id" placeholder="Id">
+                                <input type="text" class="form-control form-control-lg" id="id" name="id" placeholder="Id">
                             </div>
                             <div class="form-group">
                                 <!-- <input type="text" class="form-control form-control-lg" id="status" name="status" placeholder="Status"> -->

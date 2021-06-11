@@ -34,6 +34,14 @@ class Pgn_model extends CI_Model
 	{
 		return $this->db->get('tbl_task')->result();
 	}
+	public function select_topup()
+	{
+		return $this->db->query('select a.id, a.tgl_topup,a.jml_topup,a.bukti,a.transaksi,a.status,b.nama_usr from tbl_topup a, tbl_user b where a.id_usr=b.id_usr order by id desc')->result();
+	}
+	public function select_tarik()
+	{
+		return $this->db->query('select a.id, a.tgl_tarik,a.jml_tarik,a.transaksi,a.pembayaran,a.no_rek,a.status,b.nama_usr from tbl_tarik a, tbl_user b where a.id_usr=b.id_usr order by id desc')->result();
+	}
 
 	//update
 	public function update_user($id, $data)
@@ -83,6 +91,19 @@ class Pgn_model extends CI_Model
 	{
 
 		$this->db->update('tbl_task', $data, array('id_task' => $id));
+		return ($this->db->affected_rows() > 0) ? TRUE : FALSE;
+	}
+
+	public function ubahdatatopup($data, $id)
+	{
+
+		$this->db->update('tbl_topup', $data, array('id' => $id));
+		return ($this->db->affected_rows() > 0) ? TRUE : FALSE;
+	}
+	public function ubahdatatarik($data, $id)
+	{
+
+		$this->db->update('tbl_tarik', $data, array('id' => $id));
 		return ($this->db->affected_rows() > 0) ? TRUE : FALSE;
 	}
 }

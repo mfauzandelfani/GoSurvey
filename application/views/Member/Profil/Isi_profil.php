@@ -23,7 +23,8 @@
                     <div class="card">
                         <div class="card-body">
                             <h4 class="card-title"> <?= $user['nama_usr'] ?></h4><br />
-                            <?= $this->session->flashdata('message'); ?> <br />
+
+                            <!-- <?= $this->session->flashdata('message'); ?> <br /> -->
 
                             <ul class="nav nav-tabs" id="myTab" role="tablist">
                                 <li class="nav-item">

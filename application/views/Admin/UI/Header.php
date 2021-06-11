@@ -128,9 +128,22 @@
           <li class="nav-item">
             <a class="nav-link" href="<?= site_url('/Admin/verifikasi_ctrl'); ?>">
               <span class="menu-title">Verifikasi</span>
-              <i class="mdi mdi-clipboard-check menu-icon"></i>
+              <i class="mdi mdi-settings menu-icon"></i>
             </a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="<?= site_url('/Admin/topup_ctrl'); ?>">
+              <span class="menu-title">TopUp</span>
+              <i class="mdi mdi-settings menu-icon"></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="<?= site_url('/Admin/tarik_ctrl'); ?>">
+              <span class="menu-title">Tarik</span>
+              <i class="mdi mdi-settings menu-icon"></i>
+            </a>
+          </li>
+
 
           <li class="nav-item">
             <a class="nav-link" href="<?= site_url('/Admin/Setting_ctrl'); ?>">
