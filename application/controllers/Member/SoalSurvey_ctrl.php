@@ -102,14 +102,21 @@ class SoalSurvey_ctrl extends CI_Controller
         $id_taskk = $this->input->post('idtask');
         $id_user = $this->input->post('iduser');
 
-        $x = $_POST['jawaban'];
-        $j = join(", ", $x);
-        // foreach ($x as $m) {
-        //     $y = "$j";
+        $jwbn = $_POST['jawaban'];
+        $jawab = join(", ", $jwbn);
+
+        // foreach ($jwbn as $y) {
+        //     if ($y > 1) {
+        //         $x = "[ ]";
+        //     }
         // }
 
-        $sql = "INSERT INTO `tbl_jawaban` (`id_usr`, `id_task`, `jawaban`) VALUES ($id_user, $id_taskk, '[" . $j . "]');";
+        $sql = "INSERT INTO `tbl_jawaban` (`id_usr`, `id_task`, `jawaban`) VALUES ($id_user, $id_taskk, '[" . $jawab .  "]');";
+        // var_dump($sql);
+        // die;
         $this->db->query($sql);
+
+        // $sql1 = "INSERT INTO `tbl_jawaban` (`id_usr`, `id_task`, `jawaban`) VALUES ($id_user, $id_taskk,  '{" .$jawab. "}')";
 
         redirect('/Member/ActiveSurvey_ctrl');
     }
