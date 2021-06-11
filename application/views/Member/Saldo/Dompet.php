@@ -37,7 +37,6 @@
                     <th> Transaksi</th>
                     <th> Nominal </th>
                     <th> Tanggal Transaksi</th>
-                    <th>Status</th>
                   </tr>
                 </thead>
 
@@ -51,7 +50,6 @@
                       <td><?php echo $value->nominal_trans ?></td>
                       <td><?php echo date('d F Y', $value->wkt_trans) ?></td>
                       <!-- <?= date('d F Y', $user['date_created']); ?> -->
-                      <!-- <td><?php echo $value->status ?></td> -->
 
                     </tr>
                   <?php } ?>

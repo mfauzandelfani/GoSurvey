@@ -108,40 +108,4 @@
   // });
 </script>
 
-<script>
-  $(function() {
-    $('#modal').modal('toggle');
-  });
-  $(".edit4").on("click", function() {
-    const idtopup = $(this).data('id');
-    const status = $(this).data('status');
-    // const nama = $(this).data('nama');
-    // const nomor = $(this).data('nomor');
-    // const pemilik = $(this).data('pemilik');
-
-    $("#id").attr("value", idtopup);
-    $("#status").attr("value", status);
-    // $("#nama_bank").attr("value", nama);
-    // $("#nomor_bank").attr("value", nomor);
-    // $("#Ats_nama").attr("value", pemilik);
-  })
-  $(".edit5").on("click", function() {
-    const idtopup = $(this).data('id');
-    const status = $(this).data('status');
-    // const nama = $(this).data('nama');
-    // const nomor = $(this).data('nomor');
-    // const pemilik = $(this).data('pemilik');
-
-    $("#id").attr("value", idtopup);
-    $("#status").attr("value", status);
-    // $("#nama_bank").attr("value", nama);
-    // $("#nomor_bank").attr("value", nomor);
-    // $("#Ats_nama").attr("value", pemilik);
-  })
-  // $(".form-control form-control-lg").on("change", function() {
-  //   var fileName = $(this).val().split("\\").pop();
-  //   $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
-  // });
-</script>
-
 </html>

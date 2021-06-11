@@ -6,7 +6,7 @@
         <h3 class="page-title">
             <span class="page-title-icon bg-gradient-info text-white mr-2">
                 <i class="mdi mdi-database"></i>
-            </span> Admin / Verifikasi
+            </span> Admin / Data Member
         </h3>
         <br />
 

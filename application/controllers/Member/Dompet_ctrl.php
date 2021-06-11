@@ -19,7 +19,6 @@ class Dompet_ctrl extends CI_Controller
         // $rwyt = ;
         $data = array(
             'rwyt' => $this->Dompet_model->lihat_riwayat($dataa['user']['id_usr']),
-            // 'status' => $this->Dompet_model->riwayat_status($dataa['user']['id_usr']),
             'dompet' =>  $this->Dompet_model->saldo($dataa['user']['id_usr']),
             'trans' => $this->Dompet_model->riwayat_transaksi($dataa['user']['id_usr'])
         );
@@ -50,8 +49,6 @@ class Dompet_ctrl extends CI_Controller
 
     public function isi_topup()
     {
-
-
         $data['user'] = $this->db->get_where('tbl_user', ['email_usr' =>
         $this->session->userdata('email')])->row_array();
 
@@ -59,15 +56,13 @@ class Dompet_ctrl extends CI_Controller
         $nom = $this->input->post("nominal");
         $tran = "Topup";
         $bkt = $this->input->post("bukti");
-        $sts = "unverified";
 
         $data_input = array(
             'id_usr' => $idusr,
             'tgl_topup' => time(),
             'jml_topup' => $nom,
             'bukti' => $bkt,
-            'transaksi' => $tran,
-            'status' => $sts
+            'transaksi' => $tran
         );
 
         $data_input1 = array(
@@ -76,16 +71,10 @@ class Dompet_ctrl extends CI_Controller
             'nominal_trans' => $nom,
             'wkt_trans' => time()
         );
-        // $this->Dompet_model->isi_topup($data_input);
-        // if ($data_input['status'] == $sts) {
-        //     $this->load->view('Member/UI/Header', $data);
-        //     $this->load->view('Member/Saldo/Tunggu_vrf', $data);
-        //     $this->load->view('Member/UI/Footer');
-        // } elseif ($data_input['status'] == "verified") {
+
         $this->Dompet_model->isi_topup($data_input);
         $this->Dompet_model->isi_topup_riwayat($data_input1);
         redirect('/Member/Dompet_ctrl');
-        // }
     }
 
     public function tarik()
@@ -109,20 +98,13 @@ class Dompet_ctrl extends CI_Controller
 
         $idusr = $this->input->post("id_usr");
         $nom = $this->input->post("nominal");
-        $bayar = $this->input->post("harga_saldo");
-        $rek = $this->input->post("rek");
         $tran = "Tarik";
-        $sts = "unverified";
 
         $data_input = array(
             'id_usr' => $idusr,
             'tgl_tarik' => time(),
             'jml_tarik' => $nom,
-            'transaksi' => $tran,
-            'pembayaran' => $bayar,
-            'no_rek' => $rek,
-            'status' => $sts
-
+            'transaksi' => $tran
         );
 
         $data_input1 = array(

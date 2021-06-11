@@ -44,7 +44,7 @@ class Member_ctrl extends CI_Controller
 		}
 		$data = array(
 			'survey' => $this->SurveyMember_model->jml_task($dataa['user']['id_usr']),
-			// 'jawab' => $this->SurveyMember_model->jml_done($dataa['user']['id_usr']),
+			'jawab' => $this->SurveyMember_model->jml_done($dataa['user']['id_usr']),
 			'dompet' =>  $this->Dompet_model->saldo($dataa['user']['id_usr'])
 		);
 

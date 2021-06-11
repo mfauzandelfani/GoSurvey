@@ -26,7 +26,7 @@ class SurveyMember_model extends CI_Model
     public function select_task($id_user)
     {
         // return $this->db->get('tbl_task')->result();
-        return $this->db->query('select a.id_task, a.judul_task, a.desk_task, a.jmlrespon_task, a.nominal_task, a.img, a.pembayaran, a.status from tbl_task a, tbl_user b where a.id_usr = b.id_usr and a.id_usr ="' . $id_user . '" 
+        return $this->db->query('select a.id_task, a.judul_task, a.desk_task, a.jmlrespon_task, a.nominal_task, a.img from tbl_task a, tbl_user b where a.id_usr = b.id_usr and a.id_usr ="' . $id_user . '" 
         order by id_task desc limit 1')->result();
     }
 
