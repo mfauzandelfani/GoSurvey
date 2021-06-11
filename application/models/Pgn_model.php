@@ -86,7 +86,6 @@ class Pgn_model extends CI_Model
 		$this->db->update('tbl_task', $data, array('id_task' => $id));
 		return ($this->db->affected_rows() > 0) ? TRUE : FALSE;
 	}
-<<<<<<< HEAD
 
 	public function ubahdatatopup($data, $id)
 	{
@@ -113,6 +112,4 @@ class Pgn_model extends CI_Model
 	{
 		$this->db->insert('tbl_saldo', $data);
 	}
-=======
->>>>>>> parent of 496fb92 (Verifikasi)
 }
